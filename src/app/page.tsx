@@ -3,9 +3,12 @@
 import React, { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { KeywordExplorer } from "@/components/KeywordExplorer";
+import { SerpAnalyzerTab } from "@/components/SerpAnalyzerTab";
+import { CompetitorSpyTab } from "@/components/CompetitorSpyTab";
+import { AiBriefsTab } from "@/components/AiBriefsTab";
+import { TopicClusteringTab } from "@/components/TopicClusteringTab";
 import { CountryComparison } from "@/components/CountryComparison";
 import { PseoMatrix } from "@/components/PseoMatrix";
-import { AiBriefsTab } from "@/components/AiBriefsTab";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("explorer");
@@ -16,14 +19,17 @@ export default function Home() {
 
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {activeTab === "explorer" && <KeywordExplorer />}
-        {activeTab === "comparison" && <CountryComparison />}
+        {activeTab === "serp" && <SerpAnalyzerTab />}
+        {activeTab === "competitor" && <CompetitorSpyTab />}
         {activeTab === "brief" && <AiBriefsTab />}
+        {activeTab === "clustering" && <TopicClusteringTab />}
+        {activeTab === "comparison" && <CountryComparison />}
         {activeTab === "pseo" && <PseoMatrix />}
       </main>
 
       <footer className="border-t border-slate-800/80 py-6 text-center text-xs text-slate-500">
         <p>
-          Global Keyword Intelligence Platform (v2.0 Extended) • Built with Next.js & Supabase PostgreSQL
+          Global Keyword Intelligence Platform (v2.1 Pro) • Built with Next.js & Supabase PostgreSQL
         </p>
       </footer>
     </div>
